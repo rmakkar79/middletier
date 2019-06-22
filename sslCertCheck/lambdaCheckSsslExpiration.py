@@ -31,14 +31,14 @@ def checkSSLlife(urls,AlertExpirationDays,slackRestEndpiont):
                 print ("Month Expired")
                 if expirationTime[2]-currentTime[2] < AlertExpirationDays:
                     print ("Day Expired")
-                    sendNotificationSlack(slackRestEndpiont, "Sab theek hai -" + url)
-                    return "Expired"
+                    sendNotificationSlack(slackRestEndpiont, "CERT up for renewal -" + url)
+                    #return "Expired"
                 else:
                     print ("Day Not Expired")
-                    return "ALLGOOD"
+                    #return "ALLGOOD"
             else:
                 print ("Month NOT Expired")
-                return "ALLGOOD"
+                #return "ALLGOOD"
         else:
             print ("Year NOT EXPIRED")
 
@@ -46,4 +46,4 @@ def sendNotificationSlack(slackRestEndpiont,slackMessage):
     headers={'Content-type': 'application/json'}
     respone = requests.post(slackRestEndpiont,data=json.dumps({"text": slackMessage}), headers=headers)
 
-#lambda_handler("asdf","asdf")
+lambda_handler("asdf","asdf")
