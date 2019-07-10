@@ -24,4 +24,18 @@ so it can be as close as possible to the lambda run time environment.
 
 In case you dont want to do that work , i have the zip file also in github. Hopefully just uploading it should be fine.
 
+2. checkDomainExpiration
+
+Settings for lambda :
+- Runtime : 3.6
+- Handler : checkDoaminExpiration.lambda_handler
+- Environment variables:
+    - AlertExpirationDays ( example: 10 )
+    - slackRestEndpiont ( example: https://hooks.slack.com/services/<something>/<something> )
+    - urls ( example: google.com,yahoo.com )
+       
+ Rest everything is default.
+ 
+ You can create a AWS Cloudwatch rule to run on a certain schedule.
+
 
