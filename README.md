@@ -1,7 +1,7 @@
 # middletier
 Stuff related to middle tier like web/app server
 
-1. sslCertCheck
+**1. sslCertCheck**
 
 This is a lambda which can be used in AWS public cloud. 
 Settings for lambda :
