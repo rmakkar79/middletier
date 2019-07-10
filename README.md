@@ -24,7 +24,7 @@ so it can be as close as possible to the lambda run time environment.
 
 In case you dont want to do that work , i have the zip file also in github. Hopefully just uploading it should be fine.
 
-2. checkDomainExpiration
+**2. checkDomainExpiration**
 
 Settings for lambda :
 - Runtime : 3.6
