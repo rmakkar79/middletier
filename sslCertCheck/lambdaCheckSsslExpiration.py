@@ -4,7 +4,7 @@ import datetime
 import requests
 import json
 import os
-
+#something
 def lambda_handler(event, context):
     AlertExpirationDays=os.environ["AlertExpirationDays"]
     urls=json.loads(os.environ["urls"])
