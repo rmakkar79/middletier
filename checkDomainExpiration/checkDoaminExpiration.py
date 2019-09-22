@@ -22,7 +22,7 @@ def checkDomainExpiration(urls,AlertExpirationDays,slackRestEndpiont):
         if daytoexprire.days > int(AlertExpirationDays):
             print (daytoexprire.days)
         else:
-            sendNotificationSlack(slackRestEndpiont, "Domain going to expire" + url)
+            sendNotificationSlack(slackRestEndpiont, "Domain going to expire: " + url)
             print ("Domain going to expire")
 
 def sendNotificationSlack(slackRestEndpiont,slackMessage):
