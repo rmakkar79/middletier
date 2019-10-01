@@ -49,7 +49,7 @@ def GenerateConfig(context):
       }
   },
   {
-      """ Create un managed instance group """
+      """ Create http proxy and attach url map to it """
       'name': name + '-tp',
       'type': 'compute.v1.targetHttpProxies',
       'properties': {
@@ -58,6 +58,7 @@ def GenerateConfig(context):
       }
   },
   {
+       """ Create loadbalancer and attach http proxy to it """
       'name': name + '-lb',
       'type': 'compute.v1.globalForwardingRule',
       'properties': {
@@ -68,6 +69,7 @@ def GenerateConfig(context):
       }
   },
     {
+         """ Make a api call to add instance to un managed instance group """
         'name': name + '-ig-members',
         'action': 'gcp-types/compute-v1:compute.instanceGroups.addInstances',
         'properties': {

@@ -1,0 +1,16 @@
+imports:
+- path: gcpHttpLb.py
+
+resources:
+- name: frontend
+  type: gcpHttpLb.py
+  properties:
+    zone: us-west1-b
+    port: 80
+    service: http
+    region: us-west1
+    lbscope: EXTERNAL
+    lb_port: 8080
+    ig_network_cidr: 10.138.0.0/20
+    project: dreamon-252415
+    instance : instance-1
