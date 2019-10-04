@@ -1,0 +1,21 @@
+info:
+  title: Loadbalancer Template
+  author: something
+  description: Creates load balancer with un managed group
+  version: 1.0
+
+imports:
+  - path: gcpHttpLb.py
+
+required:
+  - lb_port
+
+properties:
+  lb_port:
+    type: integer
+    minimum: 80
+    maximum: 100    
+    description: External port for Load balancer
+
+
+  

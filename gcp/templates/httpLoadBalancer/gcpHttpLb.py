@@ -5,7 +5,7 @@ def GenerateConfig(context):
   """Generate YAML resource configuration."""
   lb_port = context.properties['lb_port']
   
-  """ Create un managed instance group """
+  
   name = context.env['name']
   resources = [{
       'name': name + '-ig',
@@ -16,16 +16,15 @@ def GenerateConfig(context):
       },
   },
   {
-      """ Create health check """
       'name': name + '-hc',
       'type': 'compute.v1.httpHealthCheck',
       'properties': {
+          'name': name + '-hc',
           'port': context.properties['port'],
           'requestPath': '/_ah/health'
       }
   },
   {
-      """ Create backend service and attach instance group """
       'name': name + '-bes',
       'type': 'compute.v1.backendService',
       'properties': {
@@ -39,7 +38,6 @@ def GenerateConfig(context):
       }
   },
   {
-      """ Create URL map """
       'name': name + '-urlmap',
       'type': 'compute.v1.urlMaps',
       'properties': {
@@ -49,7 +47,6 @@ def GenerateConfig(context):
       }
   },
   {
-      """ Create http proxy and attach url map to it """
       'name': name + '-tp',
       'type': 'compute.v1.targetHttpProxies',
       'properties': {
@@ -58,7 +55,6 @@ def GenerateConfig(context):
       }
   },
   {
-       """ Create loadbalancer and attach http proxy to it """
       'name': name + '-lb',
       'type': 'compute.v1.globalForwardingRule',
       'properties': {
@@ -69,7 +65,6 @@ def GenerateConfig(context):
       }
   },
     {
-         """ Make a api call to add instance to un managed instance group """
         'name': name + '-ig-members',
         'action': 'gcp-types/compute-v1:compute.instanceGroups.addInstances',
         'properties': {
