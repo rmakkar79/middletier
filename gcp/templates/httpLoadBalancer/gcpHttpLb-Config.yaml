@@ -10,7 +10,7 @@ resources:
     service: http
     region: us-west1
     lbscope: EXTERNAL
-    lb_port: 110
-    ig_network_cidr: 10.138.0.0/20
-    project_id: dreamon-252415
-    instance : instance-1
+    lb_port: <LB PORT>
+    ig_network_cidr: < CIDR of internal network>
+    project_id: < Project ID>
+    instance : <instance name>
