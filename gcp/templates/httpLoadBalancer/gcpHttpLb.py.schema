@@ -14,7 +14,7 @@ properties:
   lb_port:
     type: integer
     minimum: 80
-    maximum: 100    
+    maximum: 9000    
     description: External port for Load balancer
 
 
