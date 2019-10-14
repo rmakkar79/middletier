@@ -1,6 +1,6 @@
 info:
   title: Loadbalancer Template
-  author: something
+  author: Bluecompass
   description: Creates load balancer with un managed group
   version: 1.0
 
